@@ -16,21 +16,21 @@ fn whole_number(input_string: &str, init: bool) -> String {
         4 => return digits_4(input_string, !init),
         5..=8 => return digits_5_8(input_string),
         9..=12 => return digits_9_12(input_string),
-        13..=16 => return digits_13_16(input_string),
-        17..=20 => return digits_17_20(input_string),
-        21..=24 => return digits_21_24(input_string),
-        25..=28 => return digits_25_28(input_string),
-        29..=32 => return digits_29_32(input_string),
-        33..=36 => return digits_33_36(input_string),
-        37..=40 => return digits_37_40(input_string),
-        41..=44 => return digits_41_44(input_string),
-        45..=48 => return digits_45_48(input_string),
-        49..=52 => return digits_49_52(input_string),
-        53..=56 => return digits_53_56(input_string),
-        57..=60 => return digits_57_60(input_string),
-        61..=64 => return digits_61_64(input_string),
-        65..=68 => return digits_65_68(input_string),
-        69..=72 => return digits_69_72(input_string),
+        13..=16 => return digits_13_72(input_string, 16, "兆"),
+        17..=20 => return digits_13_72(input_string, 20, "京"),
+        21..=24 => return digits_13_72(input_string, 24, "垓"),
+        25..=28 => return digits_13_72(input_string, 28, "𥝱"),
+        29..=32 => return digits_13_72(input_string, 32, "穣"),
+        33..=36 => return digits_13_72(input_string, 36, "溝"),
+        37..=40 => return digits_13_72(input_string, 40, "澗"),
+        41..=44 => return digits_13_72(input_string, 44, "正"),
+        45..=48 => return digits_13_72(input_string, 48, "載"),
+        49..=52 => return digits_13_72(input_string, 52, "極"),
+        53..=56 => return digits_13_72(input_string, 56, "恒河沙"),
+        57..=60 => return digits_13_72(input_string, 60, "阿僧祇"),
+        61..=64 => return digits_13_72(input_string, 64, "那由他"),
+        65..=68 => return digits_13_72(input_string, 68, "不可思議"),
+        69..=72 => return digits_13_72(input_string, 72, "無量大数"),
         _ => return "".to_string()
     }
 }
@@ -133,182 +133,12 @@ fn digits_9_12(input_string: &str) -> String {
     return format!("{}{}{}", handle_first_chars(&input_string[0..digits - (max_len - 4)]), digit_range_characters, trim_and_recurse(&input_string[digits - (max_len - 4)..digits - (max_len - 12)]));
 }
 
-fn digits_13_16(input_string: &str) -> String {
+fn digits_13_72(input_string: &str, max_len: usize, digit_range_characters: &str) -> String {
     let digits = input_string.len();
-    let max_len = 16;
     let first_chars = &input_string[0..digits - (max_len - 4)];
-    let digit_range_characters = "兆";
 
     if &input_string[digits - (max_len - 4)..digits - (max_len - 8)] != "0000" {
         return format!("{}{}{}", handle_first_chars(first_chars), digit_range_characters, prefix_and_recurse(&input_string[digits - (max_len - 4)..]));
     }
-    return format!("{}{}{}", handle_first_chars(first_chars), digit_range_characters, trim_and_recurse(&input_string[digits - (max_len - 4)..digits - (max_len - 16)]));
-}
-
-fn digits_17_20(input_string: &str) -> String {
-    let digits = input_string.len();
-    let max_len = 20;
-    let first_chars = &input_string[0..digits - (max_len - 4)];
-    let digit_range_characters = "京";
-
-    if &input_string[digits - (max_len - 4)..digits - (max_len - 8)] != "0000" {
-        return format!("{}{}{}", handle_first_chars(first_chars), digit_range_characters, prefix_and_recurse(&input_string[digits - (max_len - 4)..]));
-    }
-    return format!("{}{}{}", handle_first_chars(first_chars), digit_range_characters, trim_and_recurse(&input_string[digits - (max_len - 4)..digits - (max_len - 20)]));
-}
-
-fn digits_21_24(input_string: &str) -> String {
-    let digits = input_string.len();
-    let max_len = 24;
-    let first_chars = &input_string[0..digits - (max_len - 4)];
-    let digit_range_characters = "垓";
-
-    if &input_string[digits - (max_len - 4)..digits - (max_len - 8)] != "0000" {
-        return format!("{}{}{}", handle_first_chars(first_chars), digit_range_characters, prefix_and_recurse(&input_string[digits - (max_len - 4)..]));
-    }
-    return format!("{}{}{}", handle_first_chars(first_chars), digit_range_characters, trim_and_recurse(&input_string[digits - (max_len - 4)..digits - (max_len - 24)]));
-}
-
-fn digits_25_28(input_string: &str) -> String {
-    let digits = input_string.len();
-    let max_len = 28;
-    let first_chars = &input_string[0..digits - (max_len - 4)];
-    let digit_range_characters = "𥝱";
-
-    if &input_string[digits - (max_len - 4)..digits - (max_len - 8)] != "0000" {
-        return format!("{}{}{}", handle_first_chars(first_chars), digit_range_characters, prefix_and_recurse(&input_string[digits - (max_len - 4)..]));
-    }
-    return format!("{}{}{}", handle_first_chars(first_chars), digit_range_characters, trim_and_recurse(&input_string[digits - (max_len - 4)..digits - (max_len - 28)]));
-}
-
-fn digits_29_32(input_string: &str) -> String {
-    let digits = input_string.len();
-    let max_len = 32;
-    let first_chars = &input_string[0..digits - (max_len - 4)];
-    let digit_range_characters = "穣";
-
-    if &input_string[digits - (max_len - 4)..digits - (max_len - 8)] != "0000" {
-        return format!("{}{}{}", handle_first_chars(first_chars), digit_range_characters, prefix_and_recurse(&input_string[digits - (max_len - 4)..]));
-    }
-    return format!("{}{}{}", handle_first_chars(first_chars), digit_range_characters, trim_and_recurse(&input_string[digits - (max_len - 4)..digits - (max_len - 32)]));
-}
-
-fn digits_33_36(input_string: &str) -> String {
-    let digits = input_string.len();
-    let max_len = 36;
-    let first_chars = &input_string[0..digits - (max_len - 4)];
-    let digit_range_characters = "溝";
-
-    if &input_string[digits - (max_len - 4)..digits - (max_len - 8)] != "0000" {
-        return format!("{}{}{}", handle_first_chars(first_chars), digit_range_characters, prefix_and_recurse(&input_string[digits - (max_len - 4)..]));
-    }
-    return format!("{}{}{}", handle_first_chars(first_chars), digit_range_characters, trim_and_recurse(&input_string[digits - (max_len - 4)..digits - (max_len - 36)]));
-}
-
-fn digits_37_40(input_string: &str) -> String {
-    let digits = input_string.len();
-    let max_len = 40;
-    let first_chars = &input_string[0..digits - (max_len - 4)];
-    let digit_range_characters = "澗";
-
-    if &input_string[digits - (max_len - 4)..digits - (max_len - 8)] != "0000" {
-        return format!("{}{}{}", handle_first_chars(first_chars), digit_range_characters, prefix_and_recurse(&input_string[digits - (max_len - 4)..]));
-    }
-    return format!("{}{}{}", handle_first_chars(first_chars), digit_range_characters, trim_and_recurse(&input_string[digits - (max_len - 4)..digits - (max_len - 40)]));
-}
-
-fn digits_41_44(input_string: &str) -> String {
-    let digits = input_string.len();
-    let max_len = 44;
-    let first_chars = &input_string[0..digits - (max_len - 4)];
-    let digit_range_characters = "正";
-
-    if &input_string[digits - (max_len - 4)..digits - (max_len - 8)] != "0000" {
-        return format!("{}{}{}", handle_first_chars(first_chars), digit_range_characters, prefix_and_recurse(&input_string[digits - (max_len - 4)..]));
-    }
-    return format!("{}{}{}", handle_first_chars(first_chars), digit_range_characters, trim_and_recurse(&input_string[digits - (max_len - 4)..digits - (max_len - 44)]));
-}
-
-fn digits_45_48(input_string: &str) -> String {
-    let digits = input_string.len();
-    let max_len = 48;
-    let first_chars = &input_string[0..digits - (max_len - 4)];
-    let digit_range_characters = "載";
-
-    if &input_string[digits - (max_len - 4)..digits - (max_len - 8)] != "0000" {
-        return format!("{}{}{}", handle_first_chars(first_chars), digit_range_characters, prefix_and_recurse(&input_string[digits - (max_len - 4)..]));
-    }
-    return format!("{}{}{}", handle_first_chars(first_chars), digit_range_characters, trim_and_recurse(&input_string[digits - (max_len - 4)..digits - (max_len - 48)]));
-}
-
-fn digits_49_52(input_string: &str) -> String {
-    let digits = input_string.len();
-    let max_len = 52;
-    let first_chars = &input_string[0..digits - (max_len - 4)];
-    let digit_range_characters = "極";
-
-    if &input_string[digits - (max_len - 4)..digits - (max_len - 8)] != "0000" {
-        return format!("{}{}{}", handle_first_chars(first_chars), digit_range_characters, prefix_and_recurse(&input_string[digits - (max_len - 4)..]));
-    }
-    return format!("{}{}{}", handle_first_chars(first_chars), digit_range_characters, trim_and_recurse(&input_string[digits - (max_len - 4)..digits - (max_len - 52)]));
-}
-
-fn digits_53_56(input_string: &str) -> String {
-    let digits = input_string.len();
-    let max_len = 56;
-    let first_chars = &input_string[0..digits - (max_len - 4)];
-    let digit_range_characters = "恒河沙";
-
-    if &input_string[digits - (max_len - 4)..digits - (max_len - 8)] != "0000" {
-        return format!("{}{}{}", handle_first_chars(first_chars), digit_range_characters, prefix_and_recurse(&input_string[digits - (max_len - 4)..]));
-    }
-    return format!("{}{}{}", handle_first_chars(first_chars), digit_range_characters, trim_and_recurse(&input_string[digits - (max_len - 4)..digits - (max_len - 56)]));
-}
-
-fn digits_57_60(input_string: &str) -> String {
-    let digits = input_string.len();
-    let max_len = 60;
-    let first_chars = &input_string[0..digits - (max_len - 4)];
-    let digit_range_characters = "阿僧祇";
-
-    if &input_string[digits - (max_len - 4)..digits - (max_len - 8)] != "0000" {
-        return format!("{}{}{}", handle_first_chars(first_chars), digit_range_characters, prefix_and_recurse(&input_string[digits - (max_len - 4)..]));
-    }
-    return format!("{}{}{}", handle_first_chars(first_chars), digit_range_characters, trim_and_recurse(&input_string[digits - (max_len - 4)..digits - (max_len - 60)]));
-}
-
-fn digits_61_64(input_string: &str) -> String {
-    let digits = input_string.len();
-    let max_len = 64;
-    let first_chars = &input_string[0..digits - (max_len - 4)];
-    let digit_range_characters = "那由他";
-
-    if &input_string[digits - (max_len - 4)..digits - (max_len - 8)] != "0000" {
-        return format!("{}{}{}", handle_first_chars(first_chars), digit_range_characters, prefix_and_recurse(&input_string[digits - (max_len - 4)..]));
-    }
-    return format!("{}{}{}", handle_first_chars(first_chars), digit_range_characters, trim_and_recurse(&input_string[digits - (max_len - 4)..digits - (max_len - 64)]));
-}
-
-fn digits_65_68(input_string: &str) -> String {
-    let digits = input_string.len();
-    let max_len = 68;
-    let first_chars = &input_string[0..digits - (max_len - 4)];
-    let digit_range_characters = "不可思議";
-
-    if &input_string[digits - (max_len - 4)..digits - (max_len - 8)] != "0000" {
-        return format!("{}{}{}", handle_first_chars(first_chars), digit_range_characters, prefix_and_recurse(&input_string[digits - (max_len - 4)..]));
-    }
-    return format!("{}{}{}", handle_first_chars(first_chars), digit_range_characters, trim_and_recurse(&input_string[digits - (max_len - 4)..digits - (max_len - 68)]));
-}
-
-fn digits_69_72(input_string: &str) -> String {
-    let digits = input_string.len();
-    let max_len = 72;
-    let first_chars = &input_string[0..digits - (max_len - 4)];
-    let digit_range_characters = "無量大数";
-
-    if &input_string[digits - (max_len - 4)..digits - (max_len - 8)] != "0000" {
-        return format!("{}{}{}", handle_first_chars(first_chars), digit_range_characters, prefix_and_recurse(&input_string[digits - (max_len - 4)..]));
-    }
-    return format!("{}{}{}", handle_first_chars(first_chars), digit_range_characters, trim_and_recurse(&input_string[digits - (max_len - 4)..digits - (max_len - 72)]));
+    return format!("{}{}{}", handle_first_chars(first_chars), digit_range_characters, trim_and_recurse(&input_string[digits - (max_len - 4)..]));
 }
