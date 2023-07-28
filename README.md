@@ -1,6 +1,6 @@
 # JP Number Converter
 
-Allows converting single arabic numerals to japanese numerals, generating lists of japanese numerals from a range, and generating random japanese numerals to guess.
+Allows converting single arabic numerals to Japanese numerals, generating lists of Japanese numerals from a range, and generating random Japanese numerals to guess.
 
 ## Usage
 
@@ -78,7 +78,7 @@ cargo build --release
 
 - Decimals and fractions (in this format `123.456`) are supported.
 
-- Numbers from 0-999999999999999999999999999999999999999999999999999999999999999999999999 (10<sup>73</sup>-1) are supported (the highest number with specific words for it in japanese). If you're wondering how that looks written out:
+- Numbers from 0-999999999999999999999999999999999999999999999999999999999999999999999999 (10<sup>73</sup>-1) are supported (the highest number with specific words for it in Japanese). If you're wondering how that looks written out:
 
     Hiragana:
 
