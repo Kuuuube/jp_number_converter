@@ -78,7 +78,7 @@ cargo build --release
 
 - Decimals and fractions (in this format `123.456`) are supported.
 
-- Numbers from 0-999999999999999999999999999999999999999999999999999999999999999999999999 (10<sup>73</sup>-1) are supported (the highest number with specific words for it in Japanese). If you're wondering how that looks written out:
+- Numbers from 0-999999999999999999999999999999999999999999999999999999999999999999999999 (10<sup>72</sup>-1) are supported (the highest number with specific words for it in Japanese). If you're wondering how that looks written out:
 
     Hiragana:
 
