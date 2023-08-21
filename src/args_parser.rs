@@ -10,7 +10,7 @@ pub fn parse_args() -> Option<Settings> {
     let mut i: usize = 1;
     while i < args.len() {
         let arg = args.get(i).unwrap_or(&"".to_string()).to_string();
-        let split: Vec<&str> = arg.split("=").collect();
+        let split: Vec<&str> = arg.splitn(2, "=").collect();
         match split[0].to_lowercase().as_str() {
             "--help" => {help_message(); return None},
             "-h" => {help_message(); return None},
